@@ -18,3 +18,23 @@
 		padding-right: 20px;
 	}
 }
+@media(max-width:991px){
+	.about_container .content_box {
+		padding-top: 20px;
+	}
+	.about_container {
+		margin-bottom: 50px;
+	}
+	.about_container:last-child{
+		margin-bottom: 0px;
+	}
+	.s_form_column {
+		border-right:none;
+	}
+	.service_form_dv {
+		padding: 60px 0px 0px 0;
+	}
+	.service_info_dv {
+		padding: 50px 0 60px 0px;
+	}
+}
