@@ -1,0 +1,20 @@
+@media(min-width:992px){
+	.about_container:nth-child(even) .row {
+		flex-direction: row-reverse;
+		-webkit-flex-direction: row-reverse;
+		-ms-flex-direction: row-reverse;
+		-ms-flex-direction: row-reverse;
+	}
+	.about_container:nth-child(odd) .row .img_column {
+		padding-right: 0;
+	}
+	.about_container:nth-child(even) .row .img_column {
+		padding-left: 0;
+	}
+	.about_container:nth-child(odd) .content_box {
+		padding-left: 20px;
+	}
+	.about_container:nth-child(even) .content_box {
+		padding-right: 20px;
+	}
+}
