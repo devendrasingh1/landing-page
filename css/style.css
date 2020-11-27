@@ -1,6 +1,6 @@
 :root {
-  --primary_color: #7ab55c;
-  --secondary_color: #82f9dd;
+  --primary_color: #3144a3;
+  --secondary_color: #fac52b;
   --black_color: #252b33;
   --gray_color: #81959e;
   --gray_dark_color: #999999;
@@ -80,6 +80,31 @@ p {
 img{
 	max-width:100%;
 }
+/*=== Skew Design css start ===*/
+.skew_design {
+    position: relative;
+    z-index: 1;
+}
+.skew_design:before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: #ffffff;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    transform-origin: right top;
+    -webkit-transform-origin: right top;
+    -moz-transform-origin: right top;
+    -ms-transform-origin: right top;
+    -webkit-transform: skewY(1deg);
+    -moz-transform: skewY(1deg);
+    -ms-transform: skewY(1deg);
+    -o-transform: skewY(1deg);
+    transform: skewY(1deg);
+}
+/*=== Skew Design css End ===*/
 /*======= Gradient css start ======*/
 .gradient_bg {
     background: #82f9dd;
@@ -251,10 +276,21 @@ button:focus, input:focus, select:focus, textarea:focus{
 /*=== Splash section css End ===*/
 .splash_section_wrapper {
     padding-top: 60px;
-	background-image:url("../images/bg/splash_bg.png");
-	background-repeat: no-repeat;
-	background-size:cover;
-	background-position:center center;
+    background-image: url(../images/bg/splash_bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    z-index: 1;
+}
+.splash_section_wrapper .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--secondary_color);
+    opacity: 0.95;
 }
 .spalash_captions_center {
     max-width: 600px;
@@ -280,8 +316,8 @@ button:focus, input:focus, select:focus, textarea:focus{
 }
 .spalash_captions .spalash_btn {
     margin-top: 25px;
-    background-color: #fff;
-    color: var(--black_color);
+	color: var(--secondary_color);
+    color: #fff;
     height: 45px;
     line-height: 45px;
     width: 150px;
@@ -290,49 +326,42 @@ button:focus, input:focus, select:focus, textarea:focus{
     border: none;
 }
 .spalash_captions .spalash_btn:hover {
-    color: #ffffff;
-    background-color: #e2ae11;
+    color: var(--secondary_color);
+    background-color: #fff;
 }
 .spalash_mockup_dv {
     float: left;
     width: 100%;
-    margin-bottom: -50px;
+    margin-bottom: -100px;
     text-align: center;
 }
 /*=== Splash section css End ===*/
 /*=== feature section css start ===*/
 .feature_section_wrapper {
-    padding-top: 120px;
+    padding-top: 170px;
     padding-bottom: 30px;
+    background: var(--primary_color);
+}
+.feature_section_wrapper.skew_design:before {
+    background: var(--primary_color);
 }
 .feature_boxes {
     text-align: center;
     margin-bottom: 30px;
-    padding: 15px;
-    transition: all ease-in-out 0.25s;
-    -webkit-transition: all ease-in-out 0.25s;
-    -moz-transition: all ease-in-out 0.25s;
-    background: #ffffff;
-    box-shadow: 0 0 13px rgb(0 0 0 / 32%);
-    -moz-box-shadow: 0 0 13px rgb(0 0 0 / 32%);
-    -webkit-box-shadow: 0 0 13px rgb(0 0 0 / 32%);
 }
 .feature_boxes .icon_box .icons {
     display: inline-block;
-    width: 45px;
-    height: 45px;
+    width: 50px;
+    height: 48px;
     line-height: 45px;
-    font-size: 25px;
+    font-size: 24px;
     text-align: center;
-    background: #7ab55c;
-    background: -moz-linear-gradient(top, #7ab55c 0%, #82f9dd 100%);
-    background: -webkit-linear-gradient(top, #7ab55c 0%,#82f9dd 100%);
-    background: linear-gradient(to bottom, #7ab55c 0%,#82f9dd 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7ab55c', endColorstr='#82f9dd',GradientType=0 );
     color: #fff;
+    border: 2px solid;
     border-radius: 50%;
 }
 .feature_boxes .content_box h4 {
+	color: #fff;
     font-weight: 600;
     font-size: 20px;
     text-transform: capitalize;
@@ -340,13 +369,9 @@ button:focus, input:focus, select:focus, textarea:focus{
     margin-bottom: 15px;
 }
 .feature_boxes .content_box p {
+	color: #fff;
     margin-bottom: 0;
     font-weight: 500;
-}
-.feature_boxes:hover{
-    box-shadow: 0 0 20px rgb(0 0 0 / 40%);
-    -moz-box-shadow: 0 0 20px rgb(0 0 0 / 40%);
-    -webkit-box-shadow: 0 0 20px rgb(0 0 0 / 40%);
 }
 /*=== feature section css End ===*/
 /*=== About section css start ===*/
@@ -382,10 +407,19 @@ button:focus, input:focus, select:focus, textarea:focus{
 .s_form_column {
     border-right: 1px solid #ccc;
 }
+.service_form_dv_wrap{
+	padding: 30px 15px 0px 0px;
+}
 .service_form_dv {
     display: inline-block;
     width: 100%;
-    padding: 60px 40px 60px 0;
+    padding: 30px;
+    border-top: 5px solid var(--primary_color);
+    border-radius: 5px;
+    background: #fff;
+    box-shadow: 0 0 18px rgb(0 0 0 / 21%);
+    -webkit-box-shadow: 0 0 18px rgb(0 0 0 / 21%);
+    -moz-box-shadow: 0 0 18px rgb(0 0 0 / 21%);
 }
 .service_form_dv .form_heading {
     margin-bottom: 30px;
@@ -457,13 +491,20 @@ button:focus, input:focus, select:focus, textarea:focus{
 }
 /*==== Service form css End ====*/
 /*==== Service info css start ====*/
-.service_info_dv{
-	padding: 30px 0 30px 40px;
+.service_info_dv {
+    padding: 30px 0 30px 15px;
 }
 .service_info_row {
     display: inline-block;
     width: 100%;
     margin-bottom: 30px;
+    border-left: 5px solid var(--primary_color);
+    border-radius: 5px;
+    padding: 15px;
+    background: #fff;
+    box-shadow: 0 0 18px rgb(0 0 0 / 21%);
+    -webkit-box-shadow: 0 0 18px rgb(0 0 0 / 21%);
+    -moz-box-shadow: 0 0 18px rgb(0 0 0 / 21%);
 }
 .service_info_row:last-child {
     margin-bottom: 0;
